@@ -48,4 +48,8 @@ const getPort = () =>
 
 const result = getPort()
 
-console.log(result)
+//console.log(result)
+
+exports.Right = Right
+exports.Left = Left
+exports.fromNullable = fromNullable

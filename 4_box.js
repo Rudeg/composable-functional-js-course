@@ -1,7 +1,9 @@
 const Box = x => ({
+  ap: b2 => b2.map(x),
   map: f => Box(f(x)),
   fold: f => f(x),
-  inspect: () => `Box(${x})`
+  inspect: () => `Box(${x})`,
+  chain: f => f(x)
 })
 
 const moneyToFloat = str =>
@@ -25,4 +27,6 @@ const applyDiscount = (price, discount) =>
 
 const result = applyDiscount('$5.00', '20%')
 
-console.log(result)
+//console.log(result)
+
+exports.Box = Box
