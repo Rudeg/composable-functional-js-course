@@ -45,7 +45,6 @@ const getPort = () =>
     c => c.port
   )
 
-
 const result = getPort()
 
 //console.log(result)
@@ -54,10 +53,9 @@ exports.Right = Right
 exports.Left = Left
 exports.fromNullable = fromNullable
 
-
 let Either = {}
-Either.Left = a => Left(a)
 
+Either.Left = a => Left(a)
 Either.Right = a => Right(a)
 Either.fromNullable = fromNullable
 

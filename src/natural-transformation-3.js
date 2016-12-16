@@ -1,5 +1,5 @@
-const { Right, Left } = require('./5_either')
-const { Box } = require('./4_box')
+const { Right, Left } = require('./either')
+const { Box } = require('./box')
 const Task = require('data.task')
 
 const fake = id =>
@@ -15,9 +15,9 @@ const eitherToTask = e =>
   e.fold(Task.rejected, Task.of)
 
 Db.find(3) // Task(Right(user))
-.chain(eitherToTask)
-.chain(user =>
-  Db.find(user.best_friend_id)
-)
-.chain(eitherToTask)
-.fork(console.error, console.log)
+  .chain(eitherToTask)
+  .chain(user =>
+    Db.find(user.best_friend_id)
+  )
+  .chain(eitherToTask)
+  .fork(console.error, console.log)

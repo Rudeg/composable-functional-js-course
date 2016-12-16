@@ -1,4 +1,4 @@
-const { Box } = require('./4_box')
+const { Box } = require('./box')
 
 // Box, Either, Task, List
 // F.of, chain (flatMap, bind, >>=)
@@ -16,8 +16,8 @@ const join = m =>
 // const res1 = join(m.map(join))
 // const res2 = join(join(m))
 
-// const m = Box('wonder')
-// const res1 = join(Box.of(m))
-// const res2 = join(m.map(Box.of))
+const m = Box('wonder')
+const res1 = join(Box.of(m))
+const res2 = join(m.map(Box.of))
 
 console.log(res1, res2)

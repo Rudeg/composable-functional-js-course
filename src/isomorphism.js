@@ -1,6 +1,6 @@
-const Either = require('./5_either')
+const Either = require('./either')
 const { Right, Left, fromNullable } = Either
-const { Box } = require('./4_box')
+const { Box } = require('./box')
 const Task = require('data.task')
 const { List, Map } = require('immutable-ext')
 

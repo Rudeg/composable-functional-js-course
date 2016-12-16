@@ -1,8 +1,7 @@
-const { Box } = require('./4_box')
+const { Box } = require('./box')
 const Task = require('data.task')
-const { Right, Left, fromNullable } = require('./5_eigher')
+const { Right, Left, fromNullable } = require('./eigher')
 const { Map, List } = require('immutable-ext')
-
 
 //fx.map(f).map(g) = fx.map(x => g(f(x)))
 //fx.map(id) => id(fx)
@@ -28,7 +27,6 @@ const { Map, List } = require('immutable-ext')
 //F(x).map(f) == F(f).ap(F(x))
 
 //const res = lift2(add, Box(2), Box(4))
-
 
 const lift2 = (f, fx, fy) =>
   fx.map(f).ap(fy)

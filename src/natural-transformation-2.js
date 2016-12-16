@@ -1,4 +1,4 @@
-const {fromNullable} = require('./5_either')
+const { fromNullable } = require('./either')
 
 const first = xs => fromNullable(xs[0])
 
@@ -13,4 +13,4 @@ const larger = x =>
 const app = xs =>
   first(largeNumbers(xs.map(larger)))
 
-console.log(app([2,400,5,1000]))
+console.log(app([2, 400, 5, 1000]))

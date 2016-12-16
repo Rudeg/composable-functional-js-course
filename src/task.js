@@ -7,8 +7,8 @@ const launchMissiles = () =>
   })
 
 launchMissiles() // Task(1)
-.map(x => x + '!')
-.fork(
-  e => console.log('err', e),
-  x => console.log('success', x)
-)
+  .map(x => x + '!')
+  .fork(
+    e => console.log('err', e),
+    x => console.log('success', x)
+  )

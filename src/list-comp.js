@@ -16,8 +16,5 @@ const merch = () =>
   .ap(List(['large', 'medium', 'small']))
   .ap(List(['black']))
 
-
-
-
 const res = merch()
 console.log(res)

@@ -1,6 +1,6 @@
-const Either = require('./5_either')
+const Either = require('./either')
 const { Right, Left, fromNullable } = Either
-const { Box } = require('./4_box')
+const { Box } = require('./box')
 const Task = require('data.task')
 
 // nt(x).map(f) == nt(x.map(f))
@@ -19,6 +19,6 @@ const boxToEither = b =>
 const eitherToTask = e =>
   e.fold(Task.rejected, Task.of)
 
-// eitherToTask(Left('errrrrr'))
-// .fork(e => console.error('err', e),
-//       r => console.log('res', r))
+eitherToTask(Left('errrrrr'))
+  .fork(e => console.error('err', e),
+        r => console.log('res', r))

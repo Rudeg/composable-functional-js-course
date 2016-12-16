@@ -1,6 +1,6 @@
-const { Box } = require('./4_box')
+const { Box } = require('./box')
 const Task = require('data.task')
-const Either = require('./5_eigher')
+const Either = require('./eigher')
 
 // of
 
