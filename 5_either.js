@@ -53,3 +53,12 @@ const result = getPort()
 exports.Right = Right
 exports.Left = Left
 exports.fromNullable = fromNullable
+
+
+let Either = {}
+Either.Left = a => Left(a)
+
+Either.Right = a => Right(a)
+Either.fromNullable = fromNullable
+
+module.exports = Either

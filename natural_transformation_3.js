@@ -1,0 +1,23 @@
+const { Right, Left } = require('./5_either')
+const { Box } = require('./4_box')
+const Task = require('data.task')
+
+const fake = id =>
+ ({id : id, name: 'user1', best_friend_id: id + 1})
+
+const Db = ({
+  find: id =>
+    new Task((rej, res) =>
+      res(id > 2 ? Right(fake(id)) : Left('not found')))
+})
+
+const eitherToTask = e =>
+  e.fold(Task.rejected, Task.of)
+
+Db.find(3) // Task(Right(user))
+.chain(eitherToTask)
+.chain(user =>
+  Db.find(user.best_friend_id)
+)
+.chain(eitherToTask)
+.fork(console.error, console.log)
